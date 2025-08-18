@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inomarka.hayda</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap">
+    <script src="https://kit.fontawesome.com/455bb90822.js" crossorigin="anonymous"></script>
+    <style>
+/* ====== БАЗА И ФОН ====== */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: url('back.png') no-repeat center top fixed;
+    background-size: cover;
+    color: #ecf3ff;             /* светлее текст */
+    text-align: center;
+    position: relative;
+}
+
+/* лёгкое размытие + посветлее сине-чёрный фильтр */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('back.png') no-repeat center top fixed;
+    background-size: cover;
+    filter: blur(3px) brightness(0.92);
+    z-index: -2;
+}
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 15, 35, 0.45); /* светлее, чем раньше */
+    z-index: -1;
+}
+
+@media (max-width: 768px) {
+    body::before {
+        background: url('mobile.png') no-repeat center top fixed;
+        background-size: cover;
+    }
+}
+
+/* ====== ЛОГО И ЗАГОЛОВКИ ====== */
+.header__main img.round {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    border: 3px solid #2aa8ff;                /* яркий синий контур */
+    box-shadow: 0 0 18px rgba(42, 168, 255, .75);
+}
+
+.header__title {
+    font-size: 1.9rem;
+    margin: 8px 0 18px;
+}
+.header__title span {
+    background: linear-gradient(90deg, #33c3ff, #1e90ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.reklama-title {
+    margin-top: 18px;
+    margin-bottom: 8px;
+}
+.reklama-title span {
+    font-size: 1.2rem;
+    color: #bfe2ff; /* более светлый синий акцент */
+}
+
+/* ====== КАРТОЧКИ-КОНТЕЙНЕРЫ ====== */
+.btn__info, .reklama {
+    background: rgba(0, 0, 0, 0.28);          /* чуть светлее */
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 12px;
+    margin: 15px auto;
+    width: 90%;
+    max-width: 520px;
+    box-shadow: 0 0 22px rgba(0, 136, 255, 0.22);
+}
+
+/* ====== КНОПКИ (с постоянной анимацией подсветки) ====== */
+.btn__info-link {
+    display: block;
+    margin: 12px auto;
+    padding: 16px 22px;
+    background: linear-gradient(135deg, #34b6ff 0%, #0a2342 100%); /* синий → почти чёрный */
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    font-size: 1.28rem;                        /* чуть крупнее */
+    box-shadow:
+        0 0 0 rgba(52,182,255,0),              /* старт без свечения */
+        inset 0 0 0 rgba(255,255,255,0);
+    transition: transform .2s ease;
+    will-change: box-shadow, transform, background-position;
+    animation: glowPulse 2.2s ease-in-out infinite; /* постоянная мягкая подсветка */
+}
+
+.btn__info-link i { margin-right: 8px; }
+
+.btn__info-link:hover {
+    transform: translateY(-2px);
+}
+
+/* Анимация "мигающийся свет" — мягкое пульсирующее свечение */
+@keyframes glowPulse {
+    0% {
+        box-shadow:
+            0 0 10px rgba(52,182,255,0.35),
+            0 0 20px rgba(30,144,255,0.25),
+            0 0 40px rgba(0,153,255,0.18);
+    }
+    50% {
+        box-shadow:
+            0 0 16px rgba(52,182,255,0.55),
+            0 0 30px rgba(30,144,255,0.35),
+            0 0 60px rgba(0,153,255,0.28);
+    }
+    100% {
+        box-shadow:
+            0 0 10px rgba(52,182,255,0.35),
+            0 0 20px rgba(30,144,255,0.25),
+            0 0 40px rgba(0,153,255,0.18);
+    }
+}
+
+/* Уважение к пользователям, кто отключил анимации */
+@media (prefers-reduced-motion: reduce) {
+    .btn__info-link { animation: none; }
+}
+
+    </style>
+    
+    
+</head>
+<body>
+    <div class="header">
+        <div class="header__main">
+            <p>
+                <img src="logo.jpg" alt="" class="round">
+            </p>
+            <h1 class="header__title"><span>INOMARKA HAYDA</span></h1>
+        </div>
+
+        <div class="btn__info">
+            
+            <h2 class="reklama-title"><span>🏠 Uy joy Reklama</span></h2>
+            <a href="uy.html" class="btn__info-link"><i class="fa fa-telegram"></i>Murojat qilish</a>
+            <h2 class="reklama-title"><span>Boshqa savolar uchun!</span></h2>
+            <a href="tel:+998704000000" class="btn__info-link"><i class="fa-solid fa-phone"></i>+998704000000</a>
+            <h2 class="reklama-title"><span>Telegram kanal</span></h2>
+            <a href="https://t.me/inomarkahayda" class="btn__info-link"><i class="fa fa-telegram"></i>Telegram</a>
+            
+
+            
+
+            <h2 class="reklama-title"><span>📢 Ijtimoiy tarmoqlarimizga a'zo bo'ling!</span></h2>
+            <a href="https://www.instagram.com/inomarka.hayda/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>inomarka.hayda</a>
+            <a href="https://www.instagram.com/tuning.profi/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>tuning.profi</a>
+            <a href="https://www.youtube.com/@tuningprofi" class="btn__info-link"><i class="fa fa-youtube-play"></i>YouTube</a>
+        </div>
+
+        <div class="reklama">
+           
+
+            <h2 class="reklama-title"><span>👤 Shaxsiy Instagram</span></h2>
+            <a href="https://www.instagram.com/nodirkhudja/" class="btn__info-link"><i class="fa-brands fa-instagram"></i>Nodirxo'ja Fayz</a>
+        </div>
+    </div>
+</body>
+</html>

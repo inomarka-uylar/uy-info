@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Uy sotish — shartlar (tuzatilgan)</title>
+  <style>
+    :root {
+      --bg: #0f172a;          /* fon */
+      --card: #0b1220cc;      /* karta fon */
+      --text: #e5e7eb;        /* asosiy matn */
+      --muted: #cbd5e1;       /* ikkilamchi matn */
+      --accent: #34d399;      /* yashil ohang */
+      --accent2: #60a5fa;     /* ko'k ohang */
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background: radial-gradient(1200px 800px at 50% -10%, #1f2937 0%, var(--bg) 55%);
+      color:var(--text);
+      display:grid;
+      place-items:center;
+      padding:24px;
+    }
+
+    .card{
+      width:min(900px,95vw);
+      background: linear-gradient(180deg, rgba(16,24,40,.75), var(--card));
+      border:1px solid rgba(148,163,184,.2);
+      border-radius:24px;
+      padding:clamp(20px,4vw,36px);
+      box-shadow:0 10px 30px rgba(0,0,0,.35);
+      backdrop-filter: blur(6px);
+    }
+
+    .title{
+      margin:0 0 10px 0;
+      font-size:clamp(22px,3.4vw,34px);
+      text-align:center;
+      font-weight:800;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+    }
+
+    .subtitle{
+      margin:0 0 22px 0; text-align:center; color:var(--muted); font-size:clamp(14px,1.6vw,16px);
+    }
+
+    ol{counter-reset:item; list-style:none; padding:0; margin:0; display:grid; gap:12px}
+    li{
+      position:relative; background:rgba(2,6,23,.5);
+      border:1px solid rgba(148,163,184,.18); border-radius:16px;
+      padding:14px 16px 14px 56px; line-height:1.55;
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+      overflow-wrap:anywhere; word-break:break-word; hyphens:auto;
+    }
+    li::before{
+      counter-increment:item; content:counter(item);
+      position:absolute; left:14px; top:50%; transform:translateY(-50%);
+      width:30px; height:30px; display:grid; place-items:center; border-radius:999px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2)); color:#0b1220; font-weight:800; font-size:14px;
+      box-shadow:0 6px 16px rgba(96,165,250,.35);
+    }
+    li:hover{transform:translateY(-1px); background:rgba(2,6,23,.65); border-color:rgba(148,163,184,.3)}
+
+    .badge{display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; background:rgba(52,211,153,.12); border:1px solid rgba(52,211,153,.35); color:#d1fae5; font-weight:700; font-size:13px}
+    .badge .dot{width:8px; height:8px; border-radius:999px; background:#34d399}
+
+    .contact-text{ text-align:center; margin-top:28px; font-size:18px; font-weight:700; color:var(--muted) }
+
+    .contact-link{
+      display:inline-flex; align-items:center; gap:12px; margin-top:12px; padding:18px 30px;
+      background: linear-gradient(90deg, #0088cc, #00bfff);
+      color:white; font-weight:800; border-radius:50px; font-size:22px; letter-spacing:.3px;
+      text-decoration:none; transition: transform .2s ease, box-shadow .2s ease; box-shadow:0 8px 22px rgba(0,136,204,.5);
+    }
+    .contact-link:hover{ transform: translateY(-2px); box-shadow:0 10px 26px rgba(0,136,204,.6) }
+    .contact-link i{ font-size:24px }
+
+    .center{text-align:center}
+    .diqqat{
+      color: red;
+    }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <main class="card" role="main" aria-labelledby="title">
+    <h1 id="title" class="title">Uy sotish bo‘yicha shartlar</h1>
+    <p class="subtitle">E’lon qabul qilish uchun quyidagi shartlar :</p>
+
+    <ol>
+      <li class="diqqat"><b>Diqqat:</b> tugallanmagan yoki ta’mir talab qiladigan uylar reklama qilinmaydi. 3 gektargacha yerlarni yer hisobidagi uylari ham qo’yilmaydi, yerhisobidagi uy joylarni ham qo’yilmaydi</li>
+      <li><b>Joylashuv va aniq manzil</b> — shahar/tuman, mahalla.</li>
+      <li><b>Uyning tayyorligi</b> — uy <u>to‘liq bitgan</u> va <u>yashashga tayyor</u> bo‘lishi shart.</li>
+      <li><b>Fotosuratlar</b> — uyning sifatli rasmlari: tashqi fasad, ichki xonalar</li>
+      <li><b>Biznes uchun qurilgan uy/obyektlar</b> — do‘kon, ofis, kafe yoki xizmat ko‘rsatish uchun mos tayyor obyektlar reklama ham qilinadi.</li>
+    </ol>
+
+    <p class="contact-text">Barcha ushbu shartlar va rasmlarni<br>quyidagi Telegram manziliga yuboring:</p>
+    <div class="center">
+      <a href="https://t.me/abrorxon_jigar" class="contact-link"><i class="fa fa-telegram"></i> abrorxon_jigar</a>
+    </div>
+  </main>
+</body>
+</html>
